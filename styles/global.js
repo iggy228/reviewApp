@@ -11,7 +11,7 @@ export const globalStyles = StyleSheet.create({
     },
     text: {
         fontFamily: 'roboto',
-        fontSize: 12,
+        fontSize: 16,
         color: '#333',
     }
 })
