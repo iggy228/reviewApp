@@ -1,10 +1,12 @@
-import React from 'react'
-import { View, StyleSheet, Text } from 'react-native'
+import React from 'react';
+import { View, StyleSheet, Text, Button } from 'react-native';
 
-export default function Home() {
+import { globalStyles } from '../styles/global';
+
+export default function ReviewDetail({ navigation }) {
     return (
         <View >
-            <Text>Review screen</Text>
+            <Text styles={globalStyles.title}>{ navigation.getParam('title') }</Text>
         </View>
     );
 }

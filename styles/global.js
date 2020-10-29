@@ -8,6 +8,7 @@ export const globalStyles = StyleSheet.create({
     title: {
         fontFamily: 'grandstander-bold',
         fontSize: 24,
+        color: '#333',
     },
     text: {
         fontFamily: 'roboto',
