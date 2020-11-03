@@ -6,7 +6,7 @@ import { AppLoading } from 'expo';
 
 import { globalStyles } from './styles/global';
 
-import Navigator from './routes/homeStack'
+import Navigator from './routes/drawer'
 
 // Getting font from assets/fonts
 const getFonts = () => Font.loadAsync({
