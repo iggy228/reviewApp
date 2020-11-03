@@ -10,11 +10,6 @@ export default function Home({ navigation }) {
         {title: 'Not so "Final Fantasy"', rating: 2, body: 'Lorem ipsum sit dolor', key: '3'},
     ])
 
-
-    const pressHandler = () => {
-        navigation.push('ReviewDetails')
-    }
-
     return (
         <View style={globalStyles.container}>
             <FlatList
@@ -22,7 +17,7 @@ export default function Home({ navigation }) {
                 data={review} 
                 renderItem={
                 ({ item }) => (
-                    <TouchableOpacity onPress={() => navigation.navigate('ReviewDetails', item)}>
+                    <TouchableOpacity onPress={() => navigation.push('Review', item)}>
                         <Text style={globalStyles.title}>{ item.title }</Text>
                     </TouchableOpacity>    
                 )}

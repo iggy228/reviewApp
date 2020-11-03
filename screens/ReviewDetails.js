@@ -3,16 +3,14 @@ import { View, StyleSheet, Text, Button } from 'react-native';
 
 import { globalStyles } from '../styles/global';
 
-export default function ReviewDetail({ navigation }) {
+export default function ReviewDetail({ route, navigation }) {
+    const data = route.params
+    
     return (
-        <View >
-            <Text styles={globalStyles.title}>{ navigation.getParam('title') }</Text>
+        <View style={globalStyles.container}>
+            <Text style={globalStyles.title}>{ data.title }</Text>
+            <Text style={globalStyles.text}>{ data.body }</Text>
+            <Text>{ data.rating }</Text>
         </View>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        padding: 24,
-    },
-})
