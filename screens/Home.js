@@ -12,7 +12,7 @@ export default function Home({ navigation }) {
     ])
 
     return (
-        <View style={globalStyles.container}>
+        <View>
             <FlatList
                 key={review.key}
                 data={review} 
