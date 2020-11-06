@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-export default function Header({ navigation} ) {
+export default function HeaderButton({ navigation}) {
     const openMenu = () => {
         navigation.openDrawer();
     }
