@@ -14,23 +14,5 @@ export const globalStyles = StyleSheet.create({
         fontFamily: 'roboto',
         fontSize: 16,
         color: '#333',
-    },
-    card: {
-        // for all
-        borderRadius: 16,
-        padding: 10,
-        backgroundColor: '#eee',
-        marginHorizontal: 12,
-        marginVertical: 8,
-        // for ios
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.23,
-        shadowRadius: 2.62,
-        // for android shadow
-        elevation: 4,
     }
 })
