@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { View, FlatList, Text } from 'react-native';
-import { StatusBar } from 'expo-status-bar';
+import { View, FlatList, Text, TouchableOpacity } from 'react-native';
 
 import { globalStyles } from '../styles/global'
 import Card from '../components/Card'
@@ -20,8 +19,10 @@ export default function Home({ navigation }) {
                 renderItem={
                 ({ item }) => (
                     <Card navigation={navigation} item={item}>
-                        <Text style={ globalStyles.title }>{ item.title }</Text>
-                        <Text style={ globalStyles.text }>Rating: { item.rating }</Text>
+                        <TouchableOpacity onPress={() => navigation.push('Review', item)}>
+                            <Text style={ globalStyles.title }>{ item.title }</Text>
+                            <Text style={ globalStyles.text }>Rating: { item.rating }</Text>
+                        </TouchableOpacity>
                     </Card>
                 )}
             />

@@ -1,12 +1,10 @@
 import React from 'react'
-import { View, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 
 export default function Card(props) {
     return (
         <View style={styles.card}>
-            <TouchableOpacity onPress={() => props.navigation.push('Review', props.item)}>
-                { props.children }
-            </TouchableOpacity>    
+            { props.children }
         </View>
     )
 }
