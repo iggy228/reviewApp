@@ -1,9 +1,10 @@
-import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
+import React from 'react'
+import { createStackNavigator } from '@react-navigation/stack'
 
 import Home from '../screens/Home';
-import ReviewDetails from '../screens/ReviewDetails';
-import HeaderButton from '../components/headerButton';
+import ReviewDetails from '../screens/ReviewDetails'
+import HeaderButton from '../components/headerButton'
+import HeaderTitle from '../components/headerTitle'
 
 const Stack = createStackNavigator()
 
@@ -15,14 +16,14 @@ function HomeStack() {
                 height: 80,
             },
             headerTintColor: '#eee',
+            headerTitleAlign: 'center',
         }}>
             <Stack.Screen 
                 name='Home'
                 component={Home}
                 options={({ navigation }) => {
                     return {
-                        headerTitle: 'GameZone',
-                        headerTitleAlign: 'center',
+                        headerTitle: () => <HeaderTitle/>,
                         headerLeft: () => <HeaderButton navigation={navigation} />
                     }
                 }}

@@ -1,8 +1,9 @@
-import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
+import React from 'react'
+import { createStackNavigator } from '@react-navigation/stack'
 
-import About from '../screens/About';
-import Header from '../components/headerButton';
+import About from '../screens/About'
+import Header from '../components/headerButton'
+import HeaderTitle from '../components/headerTitle'
 
 const Stack = createStackNavigator()
 
@@ -20,7 +21,7 @@ function AboutStack() {
                 component={About}
                 options={({navigation}) => {
                     return {
-                    title: 'About Gamezone',
+                    headerTitle: () => <HeaderTitle/>,
                     headerTitleAlign: 'center',
                     headerLeft: () => <Header navigation={navigation} />
                     }
