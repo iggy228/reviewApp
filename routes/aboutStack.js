@@ -2,7 +2,7 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import About from '../screens/About';
-import Header from '../shared/headerButton';
+import Header from '../components/headerButton';
 
 const Stack = createStackNavigator()
 

@@ -4,8 +4,6 @@ import { StatusBar } from 'expo-status-bar';
 import * as Font from 'expo-font';
 import { AppLoading } from 'expo';
 
-import { globalStyles } from './styles/global';
-
 import Navigator from './routes/drawer'
 
 // Getting font from assets/fonts
@@ -20,7 +18,7 @@ export default function App() {
   if (fontsLoaded) {
     return (
       <View style={{flex: 1}}>
-        <StatusBar />
+        <StatusBar style='light'/>
         <Navigator />
       </View>
     );

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, FlatList, Text } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 
 import { globalStyles } from '../styles/global'
 import Card from '../components/Card'
