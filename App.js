@@ -18,7 +18,7 @@ export default function App() {
   if (fontsLoaded) {
     return (
       <View style={{flex: 1}}>
-        <StatusBar style='light'/>
+        <StatusBar style='light' backgroundColor='#333'/>
         <Navigator />
       </View>
     );

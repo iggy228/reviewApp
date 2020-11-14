@@ -5,6 +5,7 @@ import Home from '../screens/Home';
 import ReviewDetails from '../screens/ReviewDetails'
 import HeaderButton from '../components/headerButton'
 import HeaderTitle from '../components/headerTitle'
+import { ImageBackground } from 'react-native';
 
 const Stack = createStackNavigator()
 
@@ -15,8 +16,9 @@ function HomeStack() {
                 backgroundColor: '#444',
                 height: 80,
             },
-            headerTintColor: '#eee',
             headerTitleAlign: 'center',
+            headerBackground: () => <ImageBackground source={require('../assets/images/game_bg.png')}
+            style={{width: '100%', height: '100%'}}/>
         }}>
             <Stack.Screen 
                 name='Home'

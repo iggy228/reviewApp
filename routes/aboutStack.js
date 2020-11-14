@@ -1,4 +1,5 @@
 import React from 'react'
+import { ImageBackground } from 'react-native'
 import { createStackNavigator } from '@react-navigation/stack'
 
 import About from '../screens/About'
@@ -14,7 +15,8 @@ function AboutStack() {
                 backgroundColor: '#444',
                 height: 80,
             },
-            headerTintColor: '#eee',
+            headerBackground: () => <ImageBackground source={require('../assets/images/game_bg.png')}
+            style={{width: '100%', height: '100%'}}/>
         }}>
             <Stack.Screen 
                 name='Home'

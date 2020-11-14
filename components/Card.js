@@ -16,7 +16,8 @@ const styles = StyleSheet.create({
         padding: 10,
         backgroundColor: '#eee',
         marginHorizontal: 12,
-        marginVertical: 8,
+        marginTop: 12,
+        marginBottom: 6,
         // for ios
         shadowColor: "#000",
         shadowOffset: {

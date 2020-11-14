@@ -9,9 +9,9 @@ export default function HeaderButton({ navigation}) {
     }
 
     return (
-            <TouchableOpacity style={styles.drawerButton} onPress={() => openMenu()}>
-                <Feather name="menu" size={24} color="white" />   
-            </TouchableOpacity>
+        <TouchableOpacity style={styles.drawerButton} onPress={() => openMenu()}>
+            <Feather name="menu" size={24} color="black" />   
+        </TouchableOpacity>
     )
 }
 

@@ -7,7 +7,7 @@ export default function HeaderTitle() {
     return (
         <View style={styles.container}>
             <Image source={require('../assets/icons/heart_logo.png')} style={styles.logo}/>
-            <Text style={[globalStyles.title, {color: '#eee'}]}>GameZone</Text>
+            <Text style={[globalStyles.title]}>GameZone</Text>
         </View>
     )
 }
