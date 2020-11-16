@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
-import { View, FlatList, Text, TouchableOpacity } from 'react-native';
+import { View, FlatList, Text, TouchableOpacity, Modal, StyleSheet, Button } from 'react-native';
 
 import { globalStyles } from '../styles/global'
 import Card from '../components/Card'
+import FloatingButton from '../components/FloatingButton'
+import ReviewForm from '../screens/ReviewForm'
+
 
 export default function Home({ navigation }) {
     const [review, setReview] = useState([
@@ -10,9 +13,15 @@ export default function Home({ navigation }) {
         {title: 'Pokemon red and white', rating: 4, body: 'Lorem ipsum sit dolor', key: '2'},
         {title: 'Not so "Final Fantasy"', rating: 2, body: 'Lorem ipsum sit dolor', key: '3'},
     ])
+    
+    const [modalOpen, setModalOpen] = useState(false)
 
     return (
-        <View>
+        <View style={{flex: 1}}>
+            <Modal visible={modalOpen} animationType='slide'>
+                
+            </Modal>
+
             <FlatList
                 key={review.key}
                 data={review} 
@@ -26,6 +35,16 @@ export default function Home({ navigation }) {
                     </Card>
                 )}
             />
+
+            <FloatingButton onPress={() => setModalOpen(true)}/>
+
         </View>
+
     );
 }
+
+const styles = StyleSheet.create({
+    modalContent: {
+
+    }
+})
