@@ -4,7 +4,7 @@ import { View, FlatList, Text, TouchableOpacity, Modal, StyleSheet, Button } fro
 import { globalStyles } from '../styles/global'
 import Card from '../components/Card'
 import FloatingButton from '../components/FloatingButton'
-import ReviewForm from '../screens/ReviewForm'
+import ReviewForm from './ReviewForm'
 
 
 export default function Home({ navigation }) {
@@ -19,7 +19,8 @@ export default function Home({ navigation }) {
     return (
         <View style={{flex: 1}}>
             <Modal visible={modalOpen} animationType='slide'>
-                
+                <Button title='Back!' onPress={() => setModalOpen(false)}/>
+                <ReviewForm />
             </Modal>
 
             <FlatList

@@ -14,6 +14,15 @@ export const globalStyles = StyleSheet.create({
         fontFamily: 'roboto',
         fontSize: 16,
         color: '#333',
+    },
+    input: {
+        borderColor: 'grey',
+        borderWidth: 2,
+        borderRadius: 6,
+        marginBottom: 4,
+        paddingHorizontal: 6,
+        fontSize: 16,
+        fontFamily: 'roboto'
     }
 })
 
