@@ -1,20 +1,19 @@
-import React, { useState } from 'react';
-import { View, FlatList, Text, TouchableOpacity, Modal, StyleSheet, Button } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, FlatList, Text, TouchableOpacity } from 'react-native';
 
 import { globalStyles } from '../styles/global'
 import Card from '../components/Card'
 import FloatingButton from '../components/FloatingButton'
 import ReviewForm from './ReviewForm'
 
-
 export default function Home({ navigation }) {
-    const [review, setReview] = useState([
-        {title: 'Zelda', rating: 5, body: 'Lorem ipsum sit dolor', key: '1'},
-        {title: 'Pokemon red and white', rating: 4, body: 'Lorem ipsum sit dolor', key: '2'},
-        {title: 'Not so "Final Fantasy"', rating: 2, body: 'Lorem ipsum sit dolor', key: '3'},
-    ])
-    
-    const [modalOpen, setModalOpen] = useState(false)
+    const [review, setReview] = useState({})
+
+    useEffect(() => {
+        fetch('http://192.168.241.238:3000/reviews').then(res => res.json()).then(data => {
+            setReview(data.reviews)
+        })
+    })
 
     return (
         <View style={{flex: 1}}>
@@ -24,7 +23,7 @@ export default function Home({ navigation }) {
             </Modal>
 
             <FlatList
-                key={review.key}
+                keyExtractor={item => item.id}
                 data={review} 
                 renderItem={
                 ({ item }) => (
