@@ -8,7 +8,7 @@ export default function Home({ navigation }) {
     const [review, setReview] = useState({})
 
     useEffect(() => {
-        fetch('http://192.168.241.238:3000').then(res => res.json()).then(data => {
+        fetch('http://192.168.241.238:3000/reviews').then(res => res.json()).then(data => {
             setReview(data.reviews)
         })
     })
