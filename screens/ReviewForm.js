@@ -1,10 +1,10 @@
 import React from 'react'
-import { Button, View, StyleSheet, TextInput } from 'react-native'
+import { Button, View, TextInput } from 'react-native'
 import { Form, Formik } from 'formik'
 
 import { globalStyles } from '../styles/global'
 
-export default function ReviewForm() {
+export default function ReviewForm({ closeModal }) {
     return (
         <View style={globalStyles.container}>
             <Formik
@@ -12,8 +12,14 @@ export default function ReviewForm() {
                     {title: '', body: '', rating: 0}
                 }
                 onSubmit={(values) => {
-                    values.rating = parseInt(values.rating)
-                    console.log(values)
+                    fetch('http://192.168.241.238:3000/reviews', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(values)
+                    })
+                    closeModal()
                 }}
             >
                 {(props) => (

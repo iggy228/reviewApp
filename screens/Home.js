@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, FlatList, Text, TouchableOpacity } from 'react-native';
+import { View, FlatList, Text, TouchableOpacity, Modal, Button } from 'react-native';
 
 import { globalStyles } from '../styles/global'
 import Card from '../components/Card'
@@ -8,6 +8,7 @@ import ReviewForm from './ReviewForm'
 
 export default function Home({ navigation }) {
     const [review, setReview] = useState({})
+    const [modalOpen, setModalOpen] = useState(false)
 
     useEffect(() => {
         fetch('http://192.168.241.238:3000/reviews').then(res => res.json()).then(data => {
@@ -19,7 +20,7 @@ export default function Home({ navigation }) {
         <View style={{flex: 1}}>
             <Modal visible={modalOpen} animationType='slide'>
                 <Button title='Back!' onPress={() => setModalOpen(false)}/>
-                <ReviewForm />
+                <ReviewForm closeModal={() => setModalOpen(false)}/>
             </Modal>
 
             <FlatList
@@ -42,9 +43,3 @@ export default function Home({ navigation }) {
 
     );
 }
-
-const styles = StyleSheet.create({
-    modalContent: {
-
-    }
-})
